@@ -1,0 +1,7 @@
+export default {
+  name: 'epf-custom',
+  initialize: function(container, app) {
+    container.register('data-adapter:main', EP.ActiveModelAdapter);
+  }
+}
+

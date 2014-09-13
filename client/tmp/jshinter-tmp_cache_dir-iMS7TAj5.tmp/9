@@ -1,0 +1,4 @@
+module('JSHint - initializers');
+test('initializers/epf-custom.js should pass jshint', function() { 
+  ok(false, 'initializers/epf-custom.js should pass jshint.\ninitializers/epf-custom.js: line 9, col 45, Unexpected \')\'.\ninitializers/epf-custom.js: line 9, col 45, Expected an identifier and instead saw \')\'.\ninitializers/epf-custom.js: line 9, col 46, Expected \')\' and instead saw \';\'.\ninitializers/epf-custom.js: line 9, col 47, Missing semicolon.\ninitializers/epf-custom.js: line 11, col 2, Missing semicolon.\ninitializers/epf-custom.js: line 1, col 15, \'Ep\' is not defined.\ninitializers/epf-custom.js: line 1, col 5, \'Adapter\' is defined but never used.\ninitializers/epf-custom.js: line 7, col 35, \'app\' is defined but never used.\n\n8 errors'); 
+});

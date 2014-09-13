@@ -1,0 +1,3 @@
+class Todo < ActiveRecord::Base
+	attr_accessor :client_id, :client_rev
+end

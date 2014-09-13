@@ -1,0 +1,4 @@
+module('JSHint - initializers');
+test('initializers/epf-custom.js should pass jshint', function() { 
+  ok(true, 'initializers/epf-custom.js should pass jshint.'); 
+});

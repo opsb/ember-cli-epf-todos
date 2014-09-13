@@ -1,0 +1,14 @@
+import Todo from 'todos/models/todo';
+
+export default Ember.Route.extend({
+	model: function(){
+		return this.session.query('todo');
+	},
+
+	actions: {
+		addTodo: function(){
+			var todo = this.session.add(Todo, this.get("controller").getProperties("title", "body"));
+			this.session.flush();
+		}
+	}
+});
