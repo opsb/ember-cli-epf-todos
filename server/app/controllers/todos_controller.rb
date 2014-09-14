@@ -16,6 +16,8 @@ class TodosController < ApplicationController
 	end
 
 	def create_todo_params
-		params.require(:todo).permit(:title, :description, :client_id, :client_rev, :user_id)
+		cparams = params.require(:todo).permit(:title, :description, :client_id, :client_rev, :user)
+		cparams[:user_id] = cparams.delete(:user)
+		cparams
 	end
 end

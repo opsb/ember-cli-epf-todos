@@ -1,4 +1,4 @@
 class UserSerializer < ActiveModel::Serializer
 	attributes :id, :name
-	has_many :todos, embed: :objects
+	has_many :todos
 end

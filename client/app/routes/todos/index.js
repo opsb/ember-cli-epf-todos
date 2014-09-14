@@ -18,8 +18,11 @@ export default Ember.Route.extend({
 				user: this.modelFor('user')
 			});
 
-			self.session.flush().then(null, function(){
+			self.session.flush().then(function(){
+				debugger
+			}, function(){
 				self.get("controller.model").removeObject(todo);				
+
 			});
 		}
 	}

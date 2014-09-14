@@ -1,8 +1,9 @@
-import User from 'todos/models/user';
+import Todo from 'todos/stubs/todo';
+import User from 'todos/stubs/user';
 
-export default Ep.Model.extend({
+export default Todo.reopen({
 	typeKey: 'todo',
 	title: Ep.attr('string'),
 	description: Ep.attr('string'),
-	user: Ep.belongsTo('user')
+	user: Ep.belongsTo('user', {embedded: true})
 });
