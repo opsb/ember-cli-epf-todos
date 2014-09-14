@@ -6,28 +6,30 @@ var decamelize = Ember.String.decamelize,
     pluralize = Ember.String.pluralize;
 
 var Serializer = Ep.ModelSerializer.extend({
-  keyForType: function(name, type, opts) {
-    var key = this._super(name, type);
-    if(!opts || !opts.embedded) {
-      if(type === 'belongs-to') {
-        return key;
-      } else if(type === 'has-many') {
-        return Ember.String.singularize(key);
-      }
-    }
-    return key;
-  }
+  // keyForType: function(name, type, opts) {
+  //   var key = this._super(name, type);
+  //   if(!opts || !opts.embedded) {
+  //     if(type === 'belongs-to') {
+  //       return key;
+  //     } else if(type === 'has-many') {
+  //       return Ember.String.singularize(key);
+  //     }
+  //   }
+  //   return key;
+  // }
 });
 
 var TodoSerializer = Serializer.extend({
   properties: {
-    user: { embedded: true }
+    // user: { embedded: false }
+    user: {}
   }
 });
 
 var UserSerializer = Serializer.extend({
   properties: {
-    todos: { embedded: true }
+    // todos: { embedded: false }
+    todos: {}
   }
 });
 
@@ -38,6 +40,7 @@ var Adapter = Ep.ActiveModelAdapter.extend({
   setupContainer: function(parent) {
     var container = this._super(parent);
     container.register('serializer:model', Serializer);
+    container.register('serializer:model)', Serializer);
     container.register('serializer:todo', TodoSerializer);
     container.register('serializer:user', UserSerializer);
     return container;

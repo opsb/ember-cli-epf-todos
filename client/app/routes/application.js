@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model: function(){
+		window.session = this.session;
 		return this.session.query('user');
 	},
 
