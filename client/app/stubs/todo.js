@@ -1,1 +1,0 @@
-export default Ep.Model.extend({})

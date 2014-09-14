@@ -49,7 +49,6 @@ export default {
   before: 'epf.container',
   initialize: function(container) {
     container.register('adapter:application', Adapter);
-    window.container = container;
   }
 };
 

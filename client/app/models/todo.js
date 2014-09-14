@@ -1,7 +1,4 @@
-import Todo from 'todos/stubs/todo';
-import User from 'todos/stubs/user';
-
-export default Todo.reopen({
+export default Ep.Model.extend({
 	typeKey: 'todo',
 	title: Ep.attr('string'),
 	description: Ep.attr('string'),
