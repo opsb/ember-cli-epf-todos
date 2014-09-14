@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/colby-swandale/active_model_serializers.git
+  revision: 2e791b6d5b0d40ab4ad427ba0e02f84b78bb8345
+  ref: 2e791b6d5b0d40ab4ad427ba0e02f84b78bb8345
+  specs:
+    active_model_serializers (0.8.2)
+      activemodel (>= 3.0)
+
+GIT
   remote: git://github.com/cyu/rack-cors.git
   revision: efbed09b71e9ef935c41a65ffa4b3a2aac0b0062
   specs:
@@ -20,8 +28,6 @@ GEM
       activesupport (= 4.1.2)
       builder (~> 3.1)
       erubis (~> 2.7.0)
-    active_model_serializers (0.8.1)
-      activemodel (>= 3.0)
     activemodel (4.1.2)
       activesupport (= 4.1.2)
       builder (~> 3.1)
@@ -131,7 +137,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers
+  active_model_serializers!
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails

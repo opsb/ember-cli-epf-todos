@@ -1,1 +1,0 @@
-export default {"environment":"test","baseURL":"/","locationType":"auto","EmberENV":{"FEATURES":{}},"APP":{}};

@@ -6,6 +6,8 @@
 	<button {{action 'addTodo'}}>Add</button>
 </form>
 
-{{#each model}}
-	{{title}} {{description}}
-{{/each}}
+<ul>
+	{{#each model}}
+		<li>{{title}} {{description}}</li>
+	{{/each}}
+</ul>

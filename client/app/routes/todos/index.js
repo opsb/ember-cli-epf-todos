@@ -1,17 +1,22 @@
 import Todo from 'todos/models/todo';
 
 export default Ember.Route.extend({
-	model: function(){
-		console.log('querying server');
-		return this.session.query('todo');
+	needs: ['user'],
+
+	model: function(params){
+		return this.modelFor('user').get('todos');
 	},
 
 	actions: {
 		addTodo: function(){
 			var self = this;
-			var todo = this.session.create('todo', this.get("controller").getProperties("title", "description"));
+			var controller = this.get("controller");
 
-			self.get("controller.model").pushObject(todo);
+			var todo = this.session.create('todo', {
+				title: controller.get("title"),
+				description: controller.get("description"),
+				user: this.modelFor('user')
+			});
 
 			self.session.flush().then(null, function(){
 				self.get("controller.model").removeObject(todo);				
